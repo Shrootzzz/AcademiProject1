@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<TITLE name='h1'>
+		html Text
+	</TITLE>
+</head>
+
+<body>
+	<h1>
+		{{name}}
+	</h1>
+	<h2>
+		{{school}}
+	</h2>	
+	<h3>
+		Class of 2021
+	</h3>
+	<p>
+		Hi, my name's {{name}} and I'm from {{place}}. Tell me a bit about yourself!
+	</p>
+	<div>
+		<ul name=>
+			{% for element in nameList %}
+			{% if nameList[element] > 170 %}
+			<li style="color:black">Hi {{element}}</li>
+			{% else %}
+			<li style="color:white">Hi {{element}}</li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+
+	<ul>
+		<li><a href="{{ url_for('login') }}"></a>login</li>
+	</ul>
+	
+</body>
+
+<style>
+	h1{
+		color: red
+	}
+	h2{
+		color: yellow;
+	}
+	h3{
+		color: green;
+	}
+	body{
+		text-align: center;
+		background-image: url('{{url_for('static', filename='IMG_6837.jpg')}}');
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
+	ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+	}
+
+	li {
+	    float: left;
+	}
+
+	li a {
+	    display: block;
+	    color: white;
+	    text-align: center;
+	    padding: 14px 16px;
+	    text-decoration: none;
+	}
+
+	/* Change the link color to #111 (black) on hover */
+	li a:hover {
+	    background-color: #111;
+	}
+</style>
+
+</html>
