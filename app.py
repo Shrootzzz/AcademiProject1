@@ -3,8 +3,8 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 
 @app.route('/')
-def home():
-    return render_template('me.html', name='William', school='Columbia College', place='New Zealand', nameList={'William': 175, 'Alina': 160, 'Amanda': 170, 'Bill': 180, 'William2': 174});
+def index():
+    return render_template('index.html', name='William', school='Columbia College', place='New Zealand', nameList={'William': 175, 'Alina': 160, 'Amanda': 170, 'Bill': 180, 'William2': 174});
 
 @app.route('/<inName>/<inSchool>/<inPlace>')
 def personalised(inName):

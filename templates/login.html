@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<TITLE>
-		Login
-	</TITLE>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='col-md-12' id='login'>
 	<h1>
 		LOGIN HERE!
 	</h1>
@@ -15,4 +11,5 @@
 	<form>
 		Password: <input type="text" name="Password">
 	</form>
-</body>
+</div>
+{% endblock %}

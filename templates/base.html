@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<TITLE name='h1'>
+		html Text
+	</TITLE>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar_header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('login') }}">Login</a>
+                    <li><a href="{{ url_for('index') }}">Index</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+	<h1>
+		{{name}}
+	</h1>
+	<h2>
+		{{school}}
+	</h2>	
+	<h3>
+		Class of 2021
+	</h3>
+	<p>
+		Hi, my name's {{name}} and I'm from {{place}}. Tell me a bit about yourself!
+	</p>
+	<ul>
+		<li><a href="{{ url_for('login') }}"></a>login</li>
+	</ul>
+	<div class='container'>
+    {% block content %}
+    {% endblock %}
+	</div>
+</body>
+
+<style>
+	h1{
+		color: red
+	}
+	h2{
+		color: yellow;
+	}
+	h3{
+		color: green;
+	}
+	body{
+		text-align: center;
+		background-image: url('{{url_for('static', filename='IMG_6837.jpg')}}');
+		background-repeat: no-repeat;
+		background-size:cover;
+		color: black;
+	}
+	#login{
+		color: black;
+		font-family: Verdana: 
+		text-align: center;
+	}
+</style>
+
+</html>
