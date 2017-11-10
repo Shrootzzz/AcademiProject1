@@ -1,11 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
 @app.route('/')
-def index():
-    return render_template('index.html', name='William', school='Columbia College', place='New Zealand', nameList={'William': 175, 'Alina': 160, 'Amanda': 170, 'Bill': 180, 'William2': 174});
+def base():
+    return render_template('base.html');
 
+@app.route('/index')
+def index():
+	return render_template('index.html');
+	
 @app.route('/<inName>/<inSchool>/<inPlace>')
 def personalised(inName):
 	return render_template('me.html', name=inName, school=inSchool, place=inPlace, nameList={'William':175, 'Alina':160, 'Amanda':170, 'Bill':180, 'William2':174});
