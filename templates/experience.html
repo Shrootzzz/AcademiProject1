@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="background" height="100%" width="100%">
+	<div class="navbar navbar-inverse" role="navigation">
+	    <div class="container">
+	        <div class="navbar_header">
+	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                <span class="sr-only">Toggle Navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	        </div>
+	        <div class="navbar-collapse collapse">
+	            <ul class="nav navbar-nav">
+	            	<li><a href="{{ url_for('index') }}">Home</a></li>
+	               <!--  <li><a href="{{ url_for('index') + '/#about' }}">About</a> -->
+	                <li><a href="{{ url_for('experience') }}">Experience</a>
+	               <!--  <li><a href="poker.html">Poker Website</a>
+	                <li><a href="other.html">Sleep/Schedule thing</a> -->
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+</div>
+<embed src="{{ url_for('static', filename='css/files/resume.htm') }}" height="100%" width="100%"></embed>
+
+{% endblock %}
+
+{% block tail_js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/experience.js') }}"></script>
+{% endblock %}

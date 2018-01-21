@@ -1,12 +1,49 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class='col-md-12' id='index'>
-	<h1 id='welcome'>
-		Hello {% if name %} {{ name }} {% else %} Stranger {% endif %}
-	</h1>
-	<p>
-		You can find more info <a href="{{ url_for('login') }}">here</a>
-	</p>
+<div class="parallax">
+	<div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar_header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                	<li><a href="{{ url_for('index') }}">Home</a></li>
+	               <!--  <li><a href="{{ url_for('index') + '/#about' }}">About</a> -->
+	                <li><a href="{{ url_for('experience') }}">Experience</a>
+	               <!--  <li><a href="poker.html">Poker Website</a>
+	                <li><a href="other.html">Sleep/Schedule thing</a> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class = "header">
+		<h1>William Wang</h1>
+	</div>
+	<div class="body-text">
+		<a name="about"></a>
+		<img src="{{ url_for('static', filename='css/photos/me.png') }}" alt="Photo of me" width="200px" class="my-image">
+		<p>
+			Hi! My name's William, and I'm a freshman studying Computer Science and Mathematics at Columbia University. I was born in QingDao, China, and moved to Auckland, New Zealand when I was 5 years old. Currently, I live in New York and will be there for 4 years untill I finish my undergraduate studies.
+		</p>
+		<p>
+			My hobbies include music, travelling, video games, and playing poker. I play the oboe and piano, and I'm a part of multiple music groups in Columbia. I try to visit a new country at least once a year, and I dabble in amateur photography when I travel. The main video game I play is League of Legends, where I'm ranked Platinum 5. 
+		</p>
+	</div>
+	</div>
+	<div class="top-right" width="50" height="50">
+	<a href="https://www.facebook.com/profile.php?id=100009119522152"><img src="{{ url_for('static', filename='css/photos/facebook.png') }}" class="facebook" ></a>
+	</div>
 </div>
+{% endblock %}
+
+{% block tail_js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}
